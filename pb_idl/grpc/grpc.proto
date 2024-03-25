@@ -9,6 +9,8 @@ package test;
 // 这里直接指定包名称，不使用默认包名：Demo
 option go_package = "pb_gen/grpc"; //在当前路径下创建pb/test的文件夹来存放生成的pb.go文件
 
+import "pb_idl/base/response.proto";
+
 enum Gender {
   UNKNOW = 0;
   MALE = 1;
@@ -25,10 +27,13 @@ message Grade {
 
 message GrpcRequest {
   string name = 1;
+
 }
 
 message GrpcResponse {
   string reply = 1;
+
+  base.BaseResponse baseResponse = 999;
 }
 
 service GrpcSerivce {

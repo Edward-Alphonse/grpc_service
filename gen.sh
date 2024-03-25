@@ -1,4 +1,4 @@
-protoc --go_out=./  --go-grpc_out=./ pb_idl/grpc/*proto
+protoc --go_out=./  --go-grpc_out=./ pb_idl/*/*proto
 
 
 # pb_idl/grpc/*.proto 为pb的输入路径，路径相对于gen.sh所在的文件夹，即go/src/grpc_service

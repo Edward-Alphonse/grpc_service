@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"log"
 	"net"
 
 	pb "github.com/Edward-Alphonse/grpc_service/pb_gen/grpc"
@@ -16,7 +17,14 @@ type server struct {
 }
 
 func (s *server) SayHello(ctx context.Context, in *pb.GrpcRequest) (*pb.GrpcResponse, error) {
-	return &pb.GrpcResponse{Reply: "Hello " + in.Name + ", welcome to grpc"}, nil
+	log.Printf("SayHello: %v", in)
+	resp := new(pb.GrpcResponse)
+	resp.BaseResponse = &pb.BaseResponse{
+		Code:    200,
+		Message: "success",
+	}
+	resp.Reply = fmt.Sprintf("hello, %s", in.Name)
+	return resp, nil
 }
 
 func main() {

@@ -7,7 +7,7 @@ syntax = "proto3";
 package base;
 
 // 这里直接指定包名称，不使用默认包名：Demo，golang下路径
-option go_package = "pb_idl/base";
+option go_package = "pb_gen/grpc";
 
 message BaseResponse {
   int32 code = 1;
