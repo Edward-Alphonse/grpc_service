@@ -1,0 +1,36 @@
+//# proto-file:
+//# proto-message:
+
+syntax = "proto3";
+
+// 假设有如下proto文件
+package test;
+
+// 这里直接指定包名称，不使用默认包名：Demo
+option go_package = "pb_gen/grpc"; //在当前路径下创建pb/test的文件夹来存放生成的pb.go文件
+
+enum Gender {
+  UNKNOW = 0;
+  MALE = 1;
+  FEMALE = 2;
+}
+
+message Grade {
+  int32 id = 1;        //整形
+  string name = 2;    //字符串
+  Gender gender = 3;    //枚举类型
+  map<string, float> score = 4;    //map映射
+}
+
+
+message GrpcRequest {
+
+}
+
+message GrpcResponse {
+
+}
+
+service GrpcSerivce {
+  rpc SayHello(GrpcRequest) returns (GrpcResponse);
+}
