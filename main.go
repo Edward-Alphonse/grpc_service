@@ -3,10 +3,9 @@ package main
 import (
 	"context"
 	"fmt"
-	//"grpc/pb"
-	pb "grpc_service/pb_gen/grpc"
 	"net"
 
+	pb "github.com/Edward-Alphonse/grpc_service/pb_gen/grpc"
 	"google.golang.org/grpc"
 )
 
