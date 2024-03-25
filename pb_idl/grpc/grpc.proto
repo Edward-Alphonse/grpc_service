@@ -24,11 +24,11 @@ message Grade {
 
 
 message GrpcRequest {
-
+  string name = 1;
 }
 
 message GrpcResponse {
-
+  string reply = 1;
 }
 
 service GrpcSerivce {
